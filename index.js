@@ -6,6 +6,7 @@ import { reporterRoute } from "./views/reporter/routes.js";
 import { eventRoute } from "./views/events/routes.js";
 import { funtionaryRoute } from "./views/functionaries/routes.js";
 import { tracingRoute } from "./views/tracing/routes.js";
+import { route } from "express/lib/application";
 
 const password = 'ihep9XwGpd5WqzBd';
 const user = 'observatory-admin';
@@ -24,6 +25,7 @@ app.use(eventRoute);
 app.use(funtionaryRoute);
 app.use(reporterRoute);
 app.use(tracingRoute);
+app.use('/', route)
 
 app.listen(port, ()=>{
     console.log(`Example app lisening at http://localhost:${port}`);
